@@ -1,0 +1,388 @@
+/* ===== Scene container ===== */
+.forestScene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #020617;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.forest-parallax {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.forest-static {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.forestScene img {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+.bg {
+  width: 120%;
+  height: auto;
+  top: 0;
+  left: -10%;
+  z-index: 1;
+}
+
+.moon {
+  height: 100%;
+  width: 50%;
+  top: 0px;
+  right: 0;
+  z-index: 10;
+  filter: drop-shadow(0 0 30px rgba(173, 216, 255, 0.8));
+  animation: moonFloat 6s ease-in-out infinite alternate;
+}
+
+
+
+@keyframes moonFloat {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+/* .bird {
+  width: 170px;
+  top: 200px;
+  left: 21%;
+  z-index: 4;
+} */
+
+
+.bf1 {
+  width: 70px;
+  top: 120px;
+  right: 8%;
+  z-index: 13;
+  animation: fly1 8s linear infinite;
+}
+
+.bf2 {
+  width: 70px;
+  top: 190px;
+  right: 3%;
+  z-index: 13;
+  animation: fly2 10s linear infinite;
+}
+
+@keyframes fly1 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(40px, -20px);
+  }
+
+  50% {
+    transform: translate(80px, 10px);
+  }
+
+  75% {
+    transform: translate(40px, -10px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fly2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-60px, -30px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.bluelighttree {
+  width: 400px;
+  bottom: 0;
+  left: 3%;
+  z-index: 2;
+}
+
+.bluetree {
+  width: 420px;
+  bottom: 0px;
+  right: 3%;
+  z-index: 12;
+}
+
+.redtree {
+  width: 520px;
+  bottom: 0px;
+  right: 9%;
+  z-index: 11;
+}
+
+.cauliflowertree {
+  width: 400px;
+  bottom: 0px;
+  left: 12%;
+  z-index: 2;
+}
+
+.greenlighttree {
+  width: 380px;
+  bottom: 0px;
+  left: -2%;
+  z-index: 4;
+}
+
+.rosetree {
+  width: 180px;
+  bottom: -10px;
+  left: 6%;
+  z-index: 4;
+}
+
+.greentree2 {
+  width: 320px;
+  bottom: -10px;
+  right: -10%;
+  z-index: 11;
+}
+
+.greentree3 {
+  width: 250px;
+  bottom: -10px;
+  right: 25%;
+  z-index: 10;
+}
+
+.mashroomtree {
+  width: 260px;
+  bottom: 0px;
+  left: 25%;
+  z-index: 1;
+}
+
+.greengrass1 {
+  width: 380px;
+  bottom: 0;
+  left: -3%;
+  z-index: 7;
+}
+
+.greengrasss1 {
+  width: 380px;
+  bottom: 0;
+  left: -6%;
+  z-index: 7;
+}
+
+.greengrass2 {
+  width: 370px;
+  bottom: 0;
+  left: 6%;
+  z-index: 2;
+}
+
+.greengrass3 {
+  width: 400px;
+  bottom: 0;
+  right: 14%;
+  z-index: 12;
+}
+
+.mashroom1 {
+  width: 150px;
+  bottom: 15px;
+  right: 0;
+  z-index: 12;
+}
+
+.mashroom2 {
+  width: 90px;
+  bottom: 33px;
+  left: 28%;
+  z-index: 12;
+}
+
+.mashroom3 {
+  width: 90px;
+  bottom: 33px;
+  right: 18%;
+  z-index: 12;
+}
+
+/* bird fly */
+.birdWrapper {
+  position: absolute;
+  top: 200px;
+  right: -200px;
+  z-index: 5;
+}
+
+.birdFly {
+  width: 270px;
+  transform-origin: center;
+  animation: birdFlyReverse 15s linear infinite;
+
+}
+
+@keyframes birdFlyReverse {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-120vw);
+  }
+}
+
+
+
+/* tablet */
+@media (max-width: 1024px) {
+  .moon {
+    width: 60%;
+    height: auto;
+  }
+
+  .redtree {
+    width: 420px;
+  }
+
+  .cauliflowertree {
+    width: 320px;
+  }
+
+  .bluetree,
+  .bluelighttree {
+    width: 320px;
+  }
+
+  .greenlighttree {
+    width: 300px;
+  }
+
+  .greengrass1,
+  .greengrass2,
+  .greengrass3 {
+    width: 260px;
+  }
+
+  .bird {
+    width: 120px;
+    top: 160px;
+    z-index: 4;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .forestScene {
+    height: 100dvh;
+  }
+
+  .moon {
+    width: 80%;
+    right: -10%;
+    top: 0;
+  }
+
+
+  .bird {
+    width: 90px;
+    top: 120px;
+    left: 30%;
+  }
+
+  .bf1,
+  .bf2 {
+    width: 50px;
+  }
+
+
+  .redtree {
+    width: 300px;
+    right: 0;
+  }
+
+  .cauliflowertree {
+    width: 260px;
+    left: 5%;
+  }
+
+  .greenlighttree {
+    width: 240px;
+    left: -5%;
+  }
+
+  .bluetree,
+  .bluelighttree {
+    width: 240px;
+  }
+
+  .greengrass1,
+  .greengrass2,
+  .greengrass3 {
+    width: 200px;
+  }
+
+
+  .mashroom1,
+  .mashroom2,
+  .mashroom3 {
+    width: 60px;
+  }
+
+  .mashroomtree {
+    width: 180px;
+  }
+}
+
+/* sm */
+@media (max-width: 480px) {
+  .bird {
+    display: none;
+  }
+
+  .bf1,
+  .bf2 {
+    display: none;
+  }
+
+  .redtree {
+    width: 240px;
+  }
+
+  .cauliflowertree {
+    width: 200px;
+  }
+
+  .greenlighttree {
+    width: 190px;
+  }
+
+  .greengrass1,
+  .greengrass2,
+  .greengrass3 {
+    width: 160px;
+  }
+}
