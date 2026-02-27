@@ -39,7 +39,7 @@ export default function Forest({ opacity = 1, parallax = true }) {
     }, 140);
 
     return () => clearInterval(id);
-  }, []);
+  }, [frames.length]);
 
   useEffect(() => {
     if (!parallax) return; 
